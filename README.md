@@ -36,7 +36,16 @@ Data with groundtruth chain-of-thought reasoning can be found in the below direc
 contexthub/data/data_level{level_number}/{logic_type}_traincot.json
 ```
 
-## Evaluation
+## QuickStart
+
+## Environment installation
+```
+conda create --name contexthub python=3.9
+conda activate contexthub
+pip install -r requirements.txt
+```
+
+### Evaluation
 Use the below command to run the evaluation, where {model} can be qwen-0.5...qwen-110, yi-6...yi-34, llama-7...llama-72.
 ```
 python evaluate.py --model {model} --dataset {logic_type} --level {level_number} --seed 42
@@ -46,7 +55,7 @@ You can also find other commands in:
 run_evaluate.sh
 ```
 
-## Compute result
+### Compute result
 ```
 python compute_score.py --dataset {logic_type} --level {level_number} --model {model}
 ```
@@ -54,3 +63,7 @@ You can also find other commands in:
 ```
 run_compute_score.sh
 ```
+
+## License
+The source code of ContextHub is licensed under [Apache 2.0](https://github.com/tatsu-lab/stanford_alpaca/blob/main/LICENSE). The intended purpose is solely for research use.
+
