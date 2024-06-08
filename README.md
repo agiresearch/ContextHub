@@ -26,7 +26,7 @@ To investigate these questions, we focus on standard propositional logic, specif
 
 
 ### Dataset
-You can find the instantiated logic problems in the below directory
+You can find the instantiated logic problems in the below directory, where {level_number} can be 1, 2, 3, 4, and {logic_type} can be "deductive_logic" and "abductive_logic".
 ```
 contexthub/data/data_level{level_number}/{logic_type}.json
 ```
@@ -37,4 +37,20 @@ contexthub/data/data_level{level_number}/{logic_type}_traincot.json
 ```
 
 ## Evaluation
+Use the below command to run the evaluation, where {model} can be qwen-0.5...qwen-110, yi-6...yi-34, llama-7...llama-72.
+```
+python evaluate.py --model {model} --dataset {logic_type} --level {level_number} --seed 42
+```
+You can also find other commands in:
+```
+run_evaluate.sh
+```
 
+## Compute result
+```
+python compute_score.py --dataset {logic_type} --level {level_number} --model {model}
+```
+You can also find other commands in:
+```
+run_compute_score.sh
+```
